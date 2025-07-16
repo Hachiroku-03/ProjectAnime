@@ -1,0 +1,78 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #142030;
+    color: #e8e8e4;
+}
+
+.anime-details-container{
+    width: 100%;
+    padding: 20px 0;
+    font-family: "Verdana", sans-serif;
+}
+
+.anime-trailer{
+    /* max-width: 800px; */
+    margin-bottom: 50px;
+    border:#085c94 0.5rem solid;
+    width: 100%;
+    border-radius: 10px;
+    padding: 20px;
+}
+
+.anime-trailer iframe{
+    max-width: 100%;
+}
+.anime-trailer h2{
+    font-size: 50px;
+    color: #ced4da;
+    font-weight: 600;
+    font-family: "Trebuchet MS", sans-serif;
+}
+
+
+.anime-header h1{
+    font-family: "Trebuchet MS", sans-serif;
+    color: #8097b2;
+    text-decoration: underline;
+    padding: 10px;
+    /* transition: transform 0.5s ease-in,; */
+}
+
+/* .anime-header h1:hover{
+    text-decoration: underline;
+} */
+
+.anime-info{
+    width: 100%;
+    padding: 20px;
+}
+
+.anime-info h2{
+    font-family: "Trebuchet MS", sans-serif;
+    margin-bottom: 2px;
+}
+
+.anime-info ul li{
+       list-style: none;
+       margin-bottom: 2px;
+}
+
+.anime-info strong{
+    font-family: "Trebuchet MS", sans-serif;
+}
+
+.episode-list-container{
+    display: flex;
+    flex-direction: column;
+    color: #8097b2;
+}
+
+/* .episode-list-container a{
+    text-decoration: none;
+    color: #8097b2;
+} */

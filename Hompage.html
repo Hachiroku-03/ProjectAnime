@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Homepage</title>
+
+    <link rel="stylesheet" href="Hompage.css">
+</head>
+<body>
+    <header id="First-header">
+  <div class="logo">
+    <h1>Musashi</h1>
+  </div>
+
+  <div class="search-container">
+    <input type="text" id="search" placeholder="Search (Kensaku)">
+    <button id="searchButton">Search</button>
+  </div>
+
+  <div class="burger" id="burger" aria-label="Open navigation" tabindex="0">
+    <span></span>
+    <span></span>
+    <span></span>
+  </div>
+
+  <nav>
+    <ul id="menu">
+      <li class="nav"><a href="">Home</a></li>
+      <!-- <li class="nav"><a href="">WatchList</a></li> -->
+
+      <li class="nav-dropdown">
+        Genre
+        <div class="dropdown-content">
+          <a href="genre.html?genreId=1" data-genre="1">Action</a>
+          <a href="genre.html?genreId=2" data-genre="2">Adventure</a>
+          <a href="genre.html?genreId=3" data-genre="3">Comedy</a>
+          <a href="genre.html?genreId=4" data-genre="4">Fantasy</a>
+          <a href="genre.html?genreId=5" data-genre="5">Romance</a>
+          <a href="genre.html?genreId=6" data-genre="6">Sci-Fi</a>
+        </div>
+      </li>
+
+      <li class="nav-dropdown">
+        Type
+        <div class="dropdown-content">
+          <a href="type.html?typeId=Tv">TV Series</a>
+          <a href="type.html?typeId=Movie">Movies</a>
+          <a href="type.html?typeId=ova">OVA</a>
+          <a href="type.html?typeId=onas">ONAs</a>
+        </div>
+      </li>
+
+      <li class="nav"><a href="top.html">TopAnime</a></li>
+    </ul>
+  </nav>
+</header>
+
+  <!-- Hero Slider Section -->
+  <section class="hero-slider" id="heroSlider">
+    <!-- Slides will be dynamically inserted here -->
+  </section>
+
+  <!-- Existing Content Below -->
+  <header id="First-header">
+    <!-- ... your existing header code ... -->
+  </header>
+
+    <!-- <header id="First-header">
+    <div class="logo">
+      <h1>Musashi</h1>
+    </div>
+    <div class="search-container">
+      <input type="text" id="search" placeholder="Search(Kensaku)">
+      <button id="searchButton">Search</button>
+    </div>
+    <div class="burger" id="burger" aria-label="Open navigation" tabindex="0">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav>
+      <ul id="menu">
+        <li class="nav"><a href="">Home</a></li>
+        <!-- <li class=nav><a href="">WatchList</a></li> -->
+        <!-- <li class="nav-dropdown">
+          Genre
+          <div class="dropdown-content">
+            <a href="genre.html?genreId=1" data-genre="1">Action</a>
+            <a href="genre.html?genreId=2" data-genre="2">Adventure</a>
+            <a href="genre.html?genreId=3" data-genre="4">Comedy</a>
+            <a href="genre.html?genreId=4" data-genre="10">Fantasy</a>
+            <a href="genre.html?genreId=5" data-genre="22">Romance</a>
+            <a href="genre.html?genreId=6" data-genre="24">Sci-Fi</a>
+          </div>
+        </li>
+        <li class="nav-dropdown">Type
+          <div class="dropdown-content">
+            <a href="type.html?typeId=Tv">TV Series</a>
+            <a href="type.html?typeId=Movie">Movies</a>
+            <a href="type.html?typeId=ova">OVA</a>
+            <a href="type.html?typeId=onas">ONAs</a>
+          </div>
+        </li>
+        <li class="nav"><a href="top.html">TopAnime</a></li>
+      </ul>
+    </nav>
+    </header> --> 
+
+    <section>
+        <div id="lis">
+            <div id="searchResults"></div>
+        </div>
+    </section>
+    <!-- END OF NAV SECTION -->
+
+    <section>
+        <div></div>
+    </section>
+
+    <section class="updated-Anime">
+        <div class="Latest">
+            <h2>Latest Anime</h2>
+            <a href="latest.html">View All</a>
+        </div>
+            <div class="anime-container" id="animeContainer"></div>
+    </section>
+
+
+    <section class="Upcoming-Anime">
+        <div class="heading">
+            <h2>Upcoming Anime</h2>
+            <a href="upcomingAnime.html">View All</a>
+        </div>
+        <div id="upcomingContainer" ></div>
+    </section>
+ 
+
+    <section class="Top-Anime">
+        <div class="Top">
+            <h2>Top Rated </h2>
+            <a href="top.html">View All</a>
+        </div>
+        <div id="topAnime"></div>
+    </section>
+
+    
+
+    <footer>
+     <div class="container-img">
+        <div class="footer-content">
+            <div class="logo-btn">
+                <h1>Musashi</h1>
+                <button class="btn" id="btn">
+                    Back To Top
+                </button>
+            </div>
+            <p>&copy; 2025 Musashi. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Terms of Service</a>
+                <a href="#">Contact</a>
+            </div>
+            <p class="footer-note">Files are not saved on our server. All content is streamed directly from external sources.</p>
+        </div>
+     </div>
+    </footer>
+
+    <script src="Homepage.js"></script>
+</body>
+</html>

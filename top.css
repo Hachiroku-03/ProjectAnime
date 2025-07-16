@@ -1,0 +1,369 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    background: #142030;
+    color: #e8e8e4;
+}
+
+.contain{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: #ced4da;
+    background-color: #001e32;
+    padding: 10px;
+    margin-bottom: 40px;
+}
+
+
+#search{
+    width: 400px;
+    height: 30px;
+    border-radius: 25px;
+    border: none;
+    padding: 20px;
+    background: #00406c;
+    color: #ced4da;
+    font-size: 14px;
+}
+
+.search-container {
+    display: flex;
+    margin: 20px auto;
+    width: 100%;
+    max-width: 500px;
+}
+
+#searchButton {
+    padding: 10px 15px;
+    background-color: #00406c;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 0 5px 5px 0;
+    font-size: 1rem;
+    transition: 0.3s;
+    font-family: "Trebuchet MS", sans-serif;
+}
+
+#searchButton:hover {
+    background-color: #001e32;
+}
+
+#lis{
+    width: 100%;
+    height: auto;
+}
+
+#searchResults {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 20px;
+    width: 100%;
+}
+
+.anime-seg {
+    display: flex;
+    flex-direction: column;
+    background-color: #001e32;
+    color: white;
+    border: 1px solid #00406c;
+    border-radius: 10px;
+    padding: 5px;
+    width: 200px;
+    text-align: center;
+    align-items: center;
+    box-sizing: border-box;
+    font-family: "Verdana", sans-serif;
+}
+
+.anime-seg img {
+   max-width: 100%;
+   height: 150px;
+   object-fit: cover;
+}
+
+.anime-seg h3 {
+    font-size: 0.7rem;
+    margin: 10px 0;
+}
+
+.anime-seg p{
+    font-size: 0.6rem;
+}
+
+.anime-seg a{
+    text-decoration: none;
+    color: #e8e8e4;
+    transition: all 0.5s ease-in;
+}
+
+.anime-seg a:hover{
+    color: #085c94;
+}
+
+h1{
+    font-family: "Trebuchet MS", sans-serif;
+}
+
+h2{
+    font-family: "Trebuchet MS", sans-serif;
+}
+
+.holder{
+     display: flex;
+     justify-content: space-between;
+     margin-bottom: 40px;
+}
+
+.holder button{
+      background: none;
+      border: none;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 40px;
+}
+
+.holder img{
+    width: 20px;
+}
+
+.holder a{
+    text-decoration: none;
+    color: #ced4da;
+
+}
+
+#topAnime {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+    justify-content: center;
+    font-family: "Verdana", sans-serif;
+}
+
+.anime-card {
+    display: flex;
+    flex-direction: column;
+    background-color: #001e32;
+    border: #00406c 2px solid;
+    border-radius: 10px;
+    padding: 5px;
+    align-items: center;
+    text-align: center;
+    width: 200px;
+    box-sizing: border-box;
+}
+
+
+.anime-card img {
+    max-width: 100%;
+    height: 150px; /* Fixed image height */
+    object-fit: cover;
+}
+
+.anime-card p{
+    font-size: 0.6rem;
+}
+
+.anime-card h3{
+    font-size: 0.7rem;
+    height: 40px; 
+    overflow: hidden;
+}
+
+.anime-card a{
+    text-decoration: none;
+    color: #e8e8e4;
+    transition: all 0.5s ease-in;
+}
+
+.anime-card a:hover{
+    color: #085c94;
+}
+
+footer {
+    background-color: #0c1622;
+    margin-top: 40px;
+    color: white;
+    font-family: "Trebuchet MS", sans-serif;
+}
+
+footer .container-img{
+    background: url(./Media/Image/Musashi.jpg) no-repeat center center;
+    background-size: cover;
+    padding: 80px 80px;
+}
+
+.container-img{
+    position: absolute;
+    max-width: 1800PX;
+    width: 100%;
+    /* height: 300px; */
+}
+
+
+.footer-content {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+}
+
+.footer-content p {
+    font-size: 1rem;
+    margin-bottom: 10px;
+}
+
+.footer-links {
+    margin-top: 10px;
+}
+
+.footer-content .logo-btn{
+    display: flex;
+    gap: 20px;
+    margin-bottom: 15px;
+}
+
+.logo-btn .btn{
+    background: #00406c;
+    padding: 10px;
+    border: none;
+    border-radius: 10px;
+    color: #ced4da;
+}
+
+.logo-btn .btn:hover{
+    background: #085c94;
+}
+
+
+footer .footer-note {
+    font-size: 0.9rem;
+    color: #ced4da;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.footer-links a {
+    text-decoration: none;
+    color: #ced4da;
+    margin: 0 10px;
+    font-size: 0.9rem;
+    transition: color 0.3s ease;
+}
+
+.footer-links a:hover {
+    color: #00406c;
+}
+
+@media (max-width: 767px) {
+    .contain {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .search-container {
+        width: 90%;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #search {
+        width: 100%;
+        border-radius: 25px;
+    }
+
+    #searchButton {
+        padding: 10px 15px;
+        border-radius: 5px;
+        margin-top: 10px;
+    }
+
+    #searchResults,
+    #topAnime {
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    }
+
+    .anime-card,
+    .anime-seg {
+        width: 100%;
+    }
+
+    /* .holder {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+
+    .holder button {
+        margin-right: 0;
+        margin-bottom: 10px;
+    } */
+
+    .logo-btn .btn{
+        padding: 5px;
+        font-size: 10px;
+    }
+
+    footer .footer-content {
+        text-align: center;
+    }
+
+    .footer-links {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+}
+
+@media (max-width: 1023px) {
+    .contain {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    #topAnime {
+        grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+
+    .anime-card {
+        width: 180px;
+    }
+
+    .search-container {
+        width: 80%;
+    }
+
+    .footer-content {
+        text-align: center;
+    }
+}
+
+
+@media (min-width: 1024px) {
+    #topAnime {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+
+    .anime-card {
+        transition: transform 0.3s ease-in-out;
+    }
+
+    .anime-card:hover {
+        transform: scale(1.05);
+    }
+}
