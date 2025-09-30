@@ -102,5 +102,5 @@ ProjectAnime/
 
 ## 👨‍💻 Author
 
-Musashi Anime Project  
+Shioya_86
 2025
