@@ -1,0 +1,592 @@
+/* Reset and Global Styles */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background: #0a0f1b;
+  color: #f5f6f5;
+  font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, sans-serif;
+  scrollbar-color: #3b82f6 #0a0f1b;
+  scrollbar-width: thin;
+  line-height: 1.5;
+  overflow-x: hidden;
+}
+
+h1, h2 {
+  font-family: "SF Pro Display", -apple-system, BlinkMacSystemFont, sans-serif;
+  font-weight: 600;
+  color: #ffffff;
+}
+
+/* Header */
+#First-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  padding: clamp(8px, 1.5vw, 12px) clamp(12px, 2vw, 16px);
+  background: rgba(10, 15, 27, 0.9);
+  backdrop-filter: blur(8px);
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  gap: clamp(6px, 1vw, 8px);
+}
+
+.logo h1 {
+  font-size: clamp(1.4rem, 3.5vw, 1.8rem);
+  background: linear-gradient(90deg, #3b82f6, #ec4899);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+  transition: transform 0.2s ease;
+}
+
+.logo h1:hover {
+  transform: scale(1.05);
+}
+
+/* Search */
+.search-container {
+  display: flex;
+  align-items: center;
+  gap: clamp(4px, 0.8vw, 6px);
+  flex: 1;
+  max-width: clamp(280px, 40vw, 400px);
+}
+
+#search {
+  width: 100%;
+  height: clamp(32px, 4vw, 36px);
+  padding: 0 clamp(8px, 1.5vw, 12px);
+  border: none;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.1);
+  color: #f5f6f5;
+  font-size: clamp(12px, 1.5vw, 14px);
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+#search:focus {
+  outline: none;
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 8px rgba(59, 130, 246, 0.4);
+}
+
+#searchButton {
+  padding: clamp(6px, 1vw, 8px) clamp(10px, 1.5vw, 12px);
+  background: linear-gradient(45deg, #3b82f6, #ec4899);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-size: clamp(12px, 1.5vw, 14px);
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+#searchButton:hover {
+  background: linear-gradient(45deg, #2563eb, #db2777);
+  transform: translateY(-1px);
+}
+
+/* Burger Icon */
+.burger {
+  display: none;
+  flex-direction: column;
+  justify-content: space-between;
+  width: clamp(20px, 3vw, 24px);
+  height: clamp(16px, 2.5vw, 20px);
+  cursor: pointer;
+  z-index: 1001;
+}
+
+.burger span {
+  height: 2px;
+  background: linear-gradient(90deg, #3b82f6, #ec4899);
+  border-radius: 1px;
+  transition: all 0.3s ease;
+}
+
+/* Navigation */
+nav ul {
+  list-style: none;
+  display: flex;
+  gap: clamp(8px, 1vw, 12px);
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.nav, .nav-dropdown {
+  text-decoration: none;
+  color: #f5f6f5;
+  font-size: clamp(0.8rem, 1.4vw, 0.9rem);
+  padding: clamp(4px, 0.6vw, 6px) clamp(6px, 1vw, 8px);
+  border-radius: 6px;
+  transition: color 0.2s ease, background 0.2s ease;
+  position: relative; /* Added to make .nav-dropdown the reference for dropdown */
+}
+
+.nav a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.nav:hover, .nav-dropdown:hover {
+  color: #ec4899;
+  background: rgba(255, 255, 255, 0.1);
+}
+
+.nav-dropdown .dropdown-content {
+  display: none;
+  position: absolute;
+  background: rgba(10, 15, 27, 0.9);
+  backdrop-filter: blur(6px);
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%) translateY(6px); /* Center horizontally, offset vertically */
+  width: clamp(120px, 15vw, 160px);
+  z-index: 999;
+  padding: clamp(4px, 0.8vw, 8px) 0;
+  border-radius: 6px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s ease, opacity 0.2s ease;
+  opacity: 0;
+}
+
+.nav-dropdown:hover .dropdown-content {
+  display: block;
+  transform: translateX(-50%) translateY(0); /* Center and remove vertical offset on hover */
+  opacity: 1;
+}
+
+.dropdown-content a {
+  display: block;
+  padding: clamp(4px, 0.8vw, 8px) clamp(8px, 1.2vw, 12px);
+  text-decoration: none;
+  color: #f5f6f5;
+  font-size: clamp(0.75rem, 1.4vw, 0.85rem);
+  transition: background 0.2s ease, color 0.2s ease;
+}
+
+.dropdown-content a:hover {
+  background: rgba(59, 130, 246, 0.15);
+  color: #ec4899;
+}
+
+/* Hero Slider Section */
+.hero-slider {
+  position: relative;
+  width: 100%;
+  height: clamp(40vh, 65vw, 60vh);
+  overflow: hidden;
+  margin-bottom: clamp(16px, 3vw, 24px);
+  z-index: 1;
+}
+
+.hero-slide {
+  position: absolute;
+  top: 0;
+  left: 100%;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.6s ease;
+  background-size: cover;
+  background-position: center;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  z-index: 0;
+}
+
+.hero-slide.active {
+  left: 0;
+  opacity: 1;
+  z-index: 1;
+}
+
+.hero-slide a {
+  display: block;
+  width: 100%;
+  height: 100%;
+  text-decoration: none;
+}
+
+.hero-slide .overlay {
+  background: linear-gradient(180deg, rgba(10, 15, 27, 0.1), rgba(10, 15, 27, 0.8));
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: clamp(8px, 1.5vw, 12px);
+}
+
+.hero-slide h2 {
+  color: #ffffff;
+  font-size: clamp(1.5rem, 4vw, 2.5rem);
+  font-weight: 500;
+  background: rgba(0, 0, 0, 0.5);
+  padding: clamp(8px, 1.5vw, 12px) clamp(16px, 3vw, 24px);
+  border-radius: 6px;
+  transition: transform 0.3s ease, background 0.3s ease;
+}
+
+.hero-slide:hover h2 {
+  transform: translateY(-4px);
+  background: rgba(59, 130, 246, 0.2);
+}
+
+/* Search Results Section */
+#lis {
+  min-height: 0;
+  height: auto;
+  padding: 0;
+  margin: 0;
+  visibility: hidden;
+  transition: visibility 0.2s ease, padding 0.2s ease;
+}
+
+#lis:not(:empty) {
+  visibility: visible;
+  padding: clamp(16px, 3vw, 24px);
+}
+
+#searchResults {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(clamp(140px, 18vw, 180px), 1fr));
+  gap: clamp(8px, 1.5vw, 16px);
+}
+
+/* Anime Sections */
+.updated-Anime, .Upcoming-Anime, .Top-Anime {
+  padding: clamp(16px, 3vw, 24px);
+}
+
+.anime-container, #upcomingContainer, #searchResults {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(clamp(140px, 18vw, 180px), 1fr));
+  gap: clamp(8px, 1.5vw, 16px);
+}
+
+.anime-card, .anime-box, .anime-detail {
+  background: rgba(20, 30, 48, 0.85);
+  border-radius: 8px;
+  padding: clamp(8px, 1.5vw, 12px);
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  position: relative;
+  overflow: hidden;
+}
+
+.anime-card:hover, .anime-box:hover, .anime-detail:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 6px 12px rgba(59, 130, 246, 0.4);
+}
+
+.anime-card::before, .anime-box::before, .anime-detail::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 2px;
+  background: linear-gradient(90deg, #3b82f6, #ec4899);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.anime-card:hover::before, .anime-box:hover::before, .anime-detail::before {
+  opacity: 1;
+}
+
+.anime-card img, .anime-box img, .anime-detail img {
+  width: 100%;
+  height: clamp(120px, 16vw, 160px);
+  object-fit: cover;
+  border-radius: 6px;
+  transition: transform 0.3s ease;
+}
+
+.anime-card:hover img, .anime-box:hover img, .anime-detail:hover img {
+  transform: scale(1.05);
+}
+
+.anime-card h3, .anime-box h3, .anime-detail h3 {
+  font-size: clamp(0.85rem, 1.6vw, 0.95rem);
+  margin: clamp(4px, 0.8vw, 8px) 0 clamp(2px, 0.5vw, 4px);
+  color: #f5f6f5;
+  font-weight: 500;
+}
+
+.anime-card p, .anime-box p, .anime-detail p {
+  font-size: clamp(0.7rem, 1.4vw, 0.8rem);
+  color: #d1d5db;
+}
+
+/* Top Anime Cards */
+#topAnime {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(clamp(140px, 18vw, 180px), 1fr));
+  gap: clamp(8px, 1.5vw, 16px);
+}
+
+.anime-cards {
+  background: rgba(20, 30, 48, 0.85);
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.anime-cards:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(59, 130, 246, 0.4);
+}
+
+.anime-cards .number {
+  background: linear-gradient(90deg, #3b82f6, #ec4899);
+  padding: clamp(4px, 0.8vw, 6px) clamp(6px, 1vw, 8px);
+  font-size: clamp(0.9rem, 1.6vw, 1rem);
+  color: #ffffff;
+  font-weight: 500;
+  text-align: center;
+}
+
+.anime-cards img {
+  width: 100%;
+  height: clamp(100px, 14vw, 140px);
+  object-fit: cover;
+  border-radius: 6px;
+  margin: clamp(4px, 0.8vw, 6px) 0;
+}
+
+.anime-info {
+  padding: clamp(6px, 1.2vw, 8px);
+}
+
+.anime-info h3 {
+  font-size: clamp(0.9rem, 1.8vw, 1rem);
+  margin: clamp(4px, 0.8vw, 6px) 0;
+  color: #f5f6f5;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.anime-info p {
+  font-size: clamp(0.75rem, 1.6vw, 0.85rem);
+  color: #d1d5db;
+  margin: clamp(2px, 0.5vw, 4px) 0;
+  line-height: 1.3;
+}
+
+/* Section Headers */
+.Latest, .Top, .heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 clamp(12px, 2vw, 16px);
+  margin-bottom: clamp(8px, 1.5vw, 12px);
+}
+
+.Latest h2, .Top h2, .heading h2 {
+  font-size: clamp(1.2rem, 2.8vw, 1.6rem);
+  color: #ffffff;
+}
+
+.Latest a, .Top a, .heading a {
+  font-size: clamp(0.8rem, 1.4vw, 0.9rem);
+  color: #3b82f6;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.Latest a:hover, .Top a:hover, .heading a:hover {
+  color: #ec4899;
+}
+
+/* Footer */
+footer {
+  background: rgba(10, 15, 27, 0.9);
+  color: #f5f6f5;
+  font-family: "SF Pro Text", -apple-system, BlinkMacSystemFont, sans-serif;
+  margin-top: clamp(24px, 3.5vw, 32px);
+  padding: clamp(16px, 3vw, 24px) 0;
+  position: relative;
+  z-index: 1;
+}
+
+.container-img {
+  background: url(./Media/Image/Musashi.jpg) no-repeat center center;
+  background-size: cover;
+  opacity: 0.1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.footer-content {
+  max-width: clamp(600px, 70vw, 800px);
+  margin: 0 auto;
+  padding: 0 clamp(12px, 2vw, 16px);
+  text-align: center;
+  position: relative;
+  z-index: 1;
+}
+
+.footer-content p {
+  font-size: clamp(0.9rem, 1.6vw, 0.95rem);
+  margin: clamp(4px, 0.8vw, 8px) 0;
+}
+
+.footer-links {
+  display: flex;
+  justify-content: center;
+  gap: clamp(8px, 1.2vw, 12px);
+  margin-top: clamp(8px, 1.2vw, 12px);
+}
+
+.footer-links a {
+  color: #f5f6f5;
+  font-size: clamp(0.75rem, 1.4vw, 0.85rem);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.footer-links a:hover {
+  color: #ec4899;
+}
+
+.logo-btn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: clamp(8px, 1.2vw, 12px);
+  margin-bottom: clamp(8px, 1.2vw, 12px);
+}
+
+.logo-btn .btn {
+  background: linear-gradient(45deg, #3b82f6, #ec4899);
+  padding: clamp(4px, 0.8vw, 6px) clamp(8px, 1.2vw, 12px);
+  border: none;
+  border-radius: 6px;
+  color: #f5f6f5;
+  font-size: clamp(0.8rem, 1.4vw, 0.9rem);
+  cursor: pointer;
+  transition: background 0.2s ease, transform 0.2s ease;
+}
+
+.logo-btn .btn:hover {
+  background: linear-gradient(45deg, #2563eb, #db2777);
+  transform: translateY(-1px);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .burger {
+    display: flex;
+  }
+
+  #First-header nav ul {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    background: rgba(10, 15, 27, 0.9);
+    backdrop-filter: blur(6px);
+    position: absolute;
+    top: clamp(40px, 6vw, 60px);
+    left: 0;
+    padding: clamp(12px, 2vw, 16px) 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+    z-index: 999;
+  }
+
+  #First-header.active nav ul {
+    display: flex;
+  }
+
+  #First-header.active .burger span:nth-child(1) {
+    transform: rotate(45deg) translate(4px, 4px);
+  }
+
+  #First-header.active .burger span:nth-child(2) {
+    opacity: 0;
+  }
+
+  #First-header.active .burger span:nth-child(3) {
+    transform: rotate(-45deg) translate(4px, -4px);
+  }
+
+  #search {
+    max-width: 100%;
+  }
+
+  .hero-slider {
+    height: clamp(30vh, 50vw, 40vh);
+  }
+
+  .hero-slide h2 {
+    font-size: clamp(1.2rem, 3.5vw, 1.8rem);
+  }
+
+  .anime-container, #upcomingContainer, #searchResults, #topAnime {
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  }
+
+  .nav-dropdown .dropdown-content {
+    left: 0; /* Reset to left-align in mobile view for better fit */
+    transform: translateX(0) translateY(6px); /* Remove centering in mobile */
+  }
+
+  .nav-dropdown:hover .dropdown-content {
+    transform: translateX(0) translateY(0);
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-slider {
+    height: clamp(25vh, 45vw, 35vh);
+  }
+
+  .hero-slide h2 {
+    font-size: clamp(1rem, 3vw, 1.5rem);
+    padding: clamp(4px, 1vw, 8px) clamp(8px, 2vw, 12px);
+  }
+
+  .anime-container, #upcomingContainer, #searchResults, #topAnime {
+    grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+  }
+
+  .logo-btn {
+    flex-direction: column;
+    gap: clamp(4px, 0.8vw, 8px);
+  }
+
+  .anime-cards img {
+    height: clamp(80px, 12vw, 120px);
+  }
+
+  .anime-info h3 {
+    font-size: clamp(0.85rem, 1.6vw, 0.95rem);
+  }
+
+  .anime-info p {
+    font-size: clamp(0.7rem, 1.4vw, 0.8rem);
+  }
+}
+
+@media (min-width: 1024px) {
+  .anime-card:hover, .anime-box:hover, .anime-detail:hover, .anime-cards:hover {
+    transform: scale(1.08);
+    box-shadow: 0 8px 16px rgba(59, 130, 246, 0.5);
+  }
+}

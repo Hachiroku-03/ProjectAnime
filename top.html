@@ -1,56 +1,88 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Top Anime</title>
-    <link rel="stylesheet" href="top.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Top Anime</title>
+  <link rel="stylesheet" href="top.css">
 </head>
 <body>
 
-    <header class="contain">
-        <h1>Musashi</h1>
-        <div class="search-container">
-            <input type="text" id="search" placeholder="Search(Kensaku)">
-            <button id="searchButton">Search</button>
-        </div>
-    </header>
-    <section>
-        <div id="lis">
-            <div id="searchResults"></div>
-        </div>
-    </section>
-    <section class="top-Anime">
-       <div class="holder">
-        <h2>TopAnime</h2>
-        <button class="back-btn">
-            <img src="./Media/Image/3847908_arrow_back_left_icon.png" alt="Back">
-            <a href="Hompage.html">Back</a>
-        </button>
-       </div>
-        <div id="topAnime"></div>
-    </section>
+  <header class="contain">
+    <h1>Musashi</h1>
+    <div class="search-container">
+      <input type="text" id="search" placeholder="Search(Kensaku)">
+      <button id="searchButton">Search</button>
+    </div>
+  </header>
 
-    <footer>
-        <div class="container-img">
-           <div class="footer-content">
-               <div class="logo-btn">
-                   <h1>Musashi</h1>
-                   <button class="btn" id="btn">
-                       Back TO TOP
-                   </button>
-               </div>
-               <p>&copy; 2025 Musashi. All rights reserved.</p>
-               <div class="footer-links">
-                   <a href="#">Privacy Policy</a>
-                   <a href="#">Terms of Service</a>
-                   <a href="#">Contact</a>
-               </div>
-               <p class="footer-note">Files are not saved on our server. All content is streamed directly from external sources.</p
-           </div>
-        </div>
-       </footer>
+  <!-- 🔽 Search Results -->
+  <section>
+    <div id="lis">
+      <div id="searchResults"></div>
+    </div>
+  </section>
 
-    <script src="top.js"></script>
+  <!-- 🔽 Top Anime Section -->
+  <section class="top-Anime">
+    <div class="holder">
+      <h2>Top Anime</h2>
+      <button class="back-btn">
+        <img src="./Media/Image/3847908_arrow_back_left_icon.png" alt="Back">
+        <a href="Homepage.html">Back</a>
+      </button>
+    </div>
+
+    <!-- 🔽 Controls -->
+    <div class="controls">
+      <label for="sort">Sort By:</label>
+      <select id="sort">
+        <option value="score">Score</option>
+        <option value="popularity">Popularity</option>
+        <option value="title">Title</option>
+      </select>
+
+      <label for="filter">Filter:</label>
+      <select id="filter">
+        <option value="all">All</option>
+        <option value="tv">TV</option>
+        <option value="movie">Movie</option>
+        <option value="ova">OVA</option>
+      </select>
+    </div>
+
+    <!-- 🔽 Anime List -->
+    <div id="topAnime"></div>
+
+    <!-- 🔽 Load More Button -->
+    <div class="load-more-container">
+      <button id="loadMore">Load More</button>
+    </div>
+  </section>
+
+  <!-- 🔽 Footer -->
+  <footer>
+    <div class="container-img">
+      <div class="footer-content">
+        <div class="logo-btn">
+          <h1>Musashi</h1>
+          <button class="btn" id="btn">
+            Back TO TOP
+          </button>
+        </div>
+        <p>&copy; 2025 Musashi. All rights reserved.</p>
+        <div class="footer-links">
+          <a href="#">Privacy Policy</a>
+          <a href="#">Terms of Service</a>
+          <a href="#">Contact</a>
+        </div>
+        <p class="footer-note">
+          Files are not saved on our server. All content is streamed directly from external sources.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <script src="top.js"></script>
 </body>
 </html>

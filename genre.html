@@ -7,11 +7,10 @@
     <link rel="stylesheet" href="genre.css">
 </head>
 <body>
-    
     <header class="contain">
         <h1>Musashi</h1>
         <div class="search-container">
-            <input type="text" id="search" placeholder="Search(Kensaku)">
+            <input type="text" id="search" placeholder="Search (Kensaku)">
             <button id="searchButton">Search</button>
         </div>
     </header>
@@ -23,34 +22,36 @@
     <section class="genre-Anime">
         <div class="holder">
             <h2>Genre</h2>
-            <button class="back-btn">
-                <img src="./Media/Image/3847908_arrow_back_left_icon.png" alt="Back">
-                <a href="Hompage.html">Back</a>
-            </button> 
+            <div class="controls">
+                <label for="genreSelect">Select Genre:</label>
+                <select id="genreSelect">
+                    <option value="">Select a genre</option>
+                </select>
             </div>
+            <a class="back-btn" href="Homepage.html">
+                <img src="./Media/Image/3847908_arrow_back_left_icon.png" alt="Back to Homepage">
+                <span>Back</span>
+            </a>
+        </div>
         <div id="genreContainer"></div>
     </section>
-
     <footer>
         <div class="container-img">
-           <div class="footer-content">
-               <div class="logo-btn">
-                   <h1>Musashi</h1>
-                   <button class="btn" id="btn">
-                       Back TO TOP
-                   </button>
-               </div>
-               <p>&copy; 2025 Musashi. All rights reserved.</p>
-               <div class="footer-links">
-                   <a href="#">Privacy Policy</a>
-                   <a href="#">Terms of Service</a>
-                   <a href="#">Contact</a>
-               </div>
-               <p class="footer-note">Files are not saved on our server. All content is streamed directly from external sources.</p
-           </div>
+            <div class="footer-content">
+                <div class="logo-btn">
+                    <h1>Musashi</h1>
+                    <button class="btn" id="btn">Back to Top</button>
+                </div>
+                <p>&copy; 2025 Musashi. All rights reserved.</p>
+                <div class="footer-links">
+                    <a href="#">Privacy Policy</a>
+                    <a href="#">Terms of Service</a>
+                    <a href="#">Contact</a>
+                </div>
+                <p class="footer-note">Files are not saved on our server. All content is streamed directly from external sources.</p>
+            </div>
         </div>
-       </footer>
-
+    </footer>
     <script src="genre.js"></script>
 </body>
 </html>
