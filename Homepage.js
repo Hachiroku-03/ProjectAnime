@@ -133,7 +133,7 @@ fetchTopAnime();
 // === SEARCH FEATURE ===
 document.getElementById("searchButton").addEventListener("click", async () => {
   const query = document.getElementById("search").value.trim();
-  if (!query) return alert("Please enter an anime name!");
+  if (!query) return document.getElementById("searchResults").innerHTML = "<p>Please enter an anime name!</p>";
 
   try {
     const response = await fetch(`https://api.jikan.moe/v4/anime?q=${query}`);

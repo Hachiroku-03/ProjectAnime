@@ -78,7 +78,7 @@ document.getElementById("searchButton").addEventListener("click", async () => {
   const query = document.getElementById("search").value.trim();
   
   if (query === "") {
-    alert("Please enter an anime name!");
+    document.getElementById("searchResults").innerHTML ="<p>Please enter an anime name!</p>";
     return;
   }
   
